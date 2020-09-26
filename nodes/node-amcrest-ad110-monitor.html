@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('node-amcrest-ad110-monitor', {
+        category: 'Amcrest AD110',
+        defaults: {
+            name: { value: '' },
+            ipAddr: { value: '', required: true }
+        },
+        credentials: {
+            password: { type: "password", required: true }
+        },
+        inputs: 1,
+        outputs: 1,
+        label: function () {
+            return this.name || 'AD110 Monitor'
+        },
+        color: "#A6BBCF",
+        paletteLabel: "Monitor",
+        icon: "font-awesome/fa-door-closed"
+    });
+</script>
+
+<script type="text/html" data-template-name="node-amcrest-ad110-monitor">
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-input-name" style="width: 10em"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name" style="-webkit-flex:1">
+    </div>
+
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-input-ipAddr" style="width: 10em"><i class="fa fa-cog"></i> IP Address</label>
+        <input type="text" id="node-input-ipAddr" style="-webkit-flex:1">
+    </div>
+
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-input-password" style="width: 10em"><i class="fa fa-cog"></i> Password</label>
+        <input type="password" id="node-input-password" style="-webkit-flex:1">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="node-amcrest-ad110-monitor">
+    <p>Listen for Amcrest AD110 Events</p>
+    <h3>Output</h3>
+    <dl class="message-properties">
+        <dt>msg <span class="property-type">object</span></dt>
+        <dd>Returns a msg with a payload consisting of an object with an 'action', 'time' and 'index' and/or 'data' depending on the type of action.</dd>
+    </dl>
+</script>

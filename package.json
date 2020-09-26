@@ -1,0 +1,38 @@
+{
+  "name": "red-contrib-amcrest-ad110",
+  "version": "0.8.0",
+  "description": "Amcrest AD110 Video Doorbell Monitor",
+  "src": "nodes/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bmdevx",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmdevx/node-red-contrib-amcrest-ad110.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bmdevx/node-red-contrib-amcrest-ad110/issues"
+  },
+  "homepage": "https://github.com/bmdevx/node-red-contrib-amcrest-ad110#readme",
+  "keywords": [
+    "node-red",
+    "amcrest",
+    "ad110",
+    "doorbell"
+  ],
+  "node-red": {
+    "nodes": {
+      "node-amcrest-ad110-monitor": "nodes/node-amcrest-ad110-monitor.js"
+    }
+  },
+  "dependencies": {
+    "amcrest-ad110": "^0.1.2"
+  },
+  "devDependencies": {
+    "node-red": "^1.1.3",
+    "node-red-node-test-helper": "^0.2.5",
+    "should": "^13.2.3"
+  }
+}
