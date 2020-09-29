@@ -8,16 +8,13 @@ module.exports = function (RED) {
 
         const ad110 = new AmcrestAD110({
             ipAddr: config.ipAddr,
-            password: node.credentials.password
+            password: node.credentials.password,
+            rawCodes: config.rawCodes
         });
 
         ad110.isAlive()
             .then(alive => {
                 if (alive) {
-                    // node.on('input', (msg, send, done) => {
-
-                    // });
-
                     node.on('close', (done) => {
                         ad110.unlisten();
                         ad110.stop();
