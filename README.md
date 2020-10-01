@@ -11,3 +11,5 @@
   * Video Motion (start/stop)
   * Doorbell Press
   * Answer/Hangup
+  * And More!
+* Takes Snapshots

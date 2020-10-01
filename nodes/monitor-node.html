@@ -3,11 +3,8 @@
         category: 'Amcrest AD110',
         defaults: {
             name: { value: '', required: false },
-            ipAddr: { value: '', required: true },
+            config: { type: 'node-amcrest-ad110-config', required: true },
             rawCodes: { value: false, required: false }
-        },
-        credentials: {
-            password: { type: "password", required: true }
         },
         inputs: 0,
         outputs: 1,
@@ -27,13 +24,8 @@
     </div>
 
     <div class="form-row" style="display: -webkit-flex;">
-        <label for="node-input-ipAddr" style="width: 10em"><i class="fa fa-cog"></i> IP Address</label>
-        <input type="text" id="node-input-ipAddr" style="-webkit-flex:1">
-    </div>
-
-    <div class="form-row" style="display: -webkit-flex;">
-        <label for="node-input-password" style="width: 10em"><i class="fa fa-cog"></i> Password</label>
-        <input type="password" id="node-input-password" style="-webkit-flex:1">
+        <label for="node-input-config" style="width: 10em"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config" style="-webkit-flex:1">
     </div>
 
     <div class="form-row" style="display: -webkit-flex;">

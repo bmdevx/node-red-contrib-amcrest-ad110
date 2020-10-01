@@ -1,0 +1,47 @@
+<script type="text/javascript">
+    RED.nodes.registerType('node-amcrest-ad110-snapshot', {
+        category: 'Amcrest AD110',
+        defaults: {
+            name: { value: '', required: false },
+            config: { type: 'node-amcrest-ad110-config', required: true },
+            imageFormat: { value: 'buffer', required: true }
+        },
+        inputs: 0,
+        outputs: 1,
+        label: function () {
+            return this.name || 'AD110 Snapshot'
+        },
+        color: "#1DB5F2",
+        paletteLabel: "Snapshot",
+        icon: "fa-camera"
+    });
+</script>
+
+<script type="text/html" data-template-name="node-amcrest-ad110-snapshot">
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-input-name" style="width: 10em"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name" style="-webkit-flex:1">
+    </div>
+
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-input-config" style="width: 10em"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config" style="-webkit-flex:1">
+    </div>
+
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-input-imageFormat" style="width: 10em"><i class="fa fa-cog"></i> Output Type</label>
+        <select id="node-input-imageFormat">
+            <option value="buffer">Buffer</option>
+            <option value="base64">Base64</option>
+        </select>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="node-amcrest-ad110-snapshot">
+    <p>Takes a Snapshot</p>
+    <h3>Output</h3>
+    <dl class="message-properties">
+        <dt>msg <span class="property-type">object</span></dt>
+        <dd>Returns a msg with a payload consisting of the selected image data type (buffer | base64).</dd>
+    </dl>
+</script>

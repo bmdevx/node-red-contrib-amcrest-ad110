@@ -6,16 +6,18 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config);
         const node = this;
 
+        const configNode = (typeof config.config === 'string') ? RED.nodes.getNode(config.config) : config.config;
+
         const ad110 = new AmcrestAD110({
-            ipAddr: config.ipAddr,
-            password: node.credentials.password,
+            ipAddr: configNode.ipAddr,
+            password: configNode.password,
             rawCodes: config.rawCodes
         });
 
         ad110.isAlive()
             .then(alive => {
                 if (alive) {
-                    node.on('close', (done) => {
+                    node.on('close', done => {
                         ad110.unlisten();
                         ad110.stop();
                         done();
@@ -37,9 +39,5 @@ module.exports = function (RED) {
             });
     }
 
-    RED.nodes.registerType("node-amcrest-ad110-monitor", NodeAmcrestAd110Monitor, {
-        credentials: {
-            password: { type: "password" }
-        }
-    });
+    RED.nodes.registerType("node-amcrest-ad110-monitor", NodeAmcrestAd110Monitor);
 }
