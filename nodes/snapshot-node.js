@@ -24,11 +24,11 @@ module.exports = function (RED) {
                         default: data = buffer; iformat = 'buffer'; break;
                     }
 
-                    node.send({
-                        payload: data,
-                        imageFormat: iformat,
-                        time: new Date()
-                    });
+                    msg.payload = data;
+                    msg.imageFormat = iformat;
+                    msg.time = new Date();
+
+                    node.send(msg);
                 })
                 .catch(node.warn)
                 .finally(done);
