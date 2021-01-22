@@ -13,4 +13,3 @@
   * Answer/Hangup
   * And More!
 * Takes Snapshots
-

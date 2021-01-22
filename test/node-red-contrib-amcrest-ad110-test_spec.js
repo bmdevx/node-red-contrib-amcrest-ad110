@@ -21,7 +21,7 @@ describe('AD110', function () {
     it('should be loaded', function (done) {
         var flow = [
             { id: "ncfg", type: "node-amcrest-ad110-config", name: "config-node", ipAddr: KEYS.IP_ADDRESS },
-            { id: "nmonitor", type: "node-amcrest-ad110-monitor", name: "monitor-node", config: "ncfg" },
+            { id: "nmonitor", type: "node-amcrest-ad110-monitor", name: "monitor-node", config: "ncfg", debug: true },
             { id: "nsnap", type: "node-amcrest-ad110-snapshot", name: "snapshot-node", config: "ncfg" }
         ];
 
@@ -70,7 +70,7 @@ describe('AD110', function () {
             });
 
             nHelpSave.on('input', (msg, send, done) => {
-                require('fs').writeFileSync('test.txt', msg.payload, 'utf-8');
+                require('fs').writeFileSync('imgbase64.txt', msg.payload, 'utf-8');
             });
 
             setTimeout(() => {

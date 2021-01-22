@@ -11,7 +11,8 @@ module.exports = function (RED) {
         const ad110 = new AmcrestAD110({
             ipAddr: configNode.ipAddr,
             password: configNode.password,
-            rawCodes: config.rawCodes
+            rawCodes: config.rawCodes,
+            debug: config.debug
         });
 
         ad110.isAlive()

@@ -4,7 +4,8 @@
         defaults: {
             name: { value: '', required: false },
             config: { type: 'node-amcrest-ad110-config', required: true },
-            rawCodes: { value: false, required: false }
+            rawCodes: { value: false, required: false },
+            debug: { value: false, required: false }
         },
         inputs: 0,
         outputs: 1,
@@ -31,6 +32,11 @@
     <div class="form-row" style="display: -webkit-flex;">
         <label for="node-input-rawCodes" style="width: 10em"><i class="fa fa-cog"></i> Use Raw Codes</label>
         <input type="checkbox" id="node-input-rawCodes" style="-webkit-flex:1">
+    </div>
+
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-input-debug" style="width: 10em"><i class="fa fa-cog"></i> Enable Debugging</label>
+        <input type="checkbox" id="node-config-input-debug" style="-webkit-flex:1">
     </div>
 </script>
 
