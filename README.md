@@ -12,4 +12,21 @@
   * Doorbell Press
   * Answer/Hangup
   * And More!
-* Takes Snapshots
+* Takes Snapshots (buffer/base64)
+
+### Common Message Payloads from AD110 (Not Raw Codes)
+
+#### msg.payload.code
+
+* 'Invite' - Doorbell pressed
+* 'Hangup' - Doorbell press rejected by app
+* 'CallNotAnswered' - No response to doorbell by app
+* 'VideoMotion' - Motioned detected by video
+* 'Motion' - Motion detected via IR
+
+#### msg.payload.action (found on VideoMotion and Motion)
+
+* 'Start' - Motion Started
+* 'Stop' - Motion Stopped
+
+#### Note: Depending on doorbell configuration, VideoMotion can be triggered quite often, especially at night
