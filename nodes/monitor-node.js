@@ -37,6 +37,10 @@ module.exports = function (RED) {
                 } else {
                     node.warn('AD110 Not Found');
                 }
+            })
+            .catch(err => {
+                node.warn('Error checking for AD110 status');
+                node.err(err);
             });
     }
 
