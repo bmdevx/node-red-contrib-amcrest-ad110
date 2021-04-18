@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-amcrest-ad110",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Amcrest AD110 Video Doorbell Tools",
   "src": "nodes/",
   "author": "bmdevx",
@@ -29,7 +29,7 @@
     }
   },
   "dependencies": {
-    "amcrest-ad110": "^1.1.5"
+    "amcrest-ad110": "^1.1.6"
   },
   "devDependencies": {
     "node-red": "^1.2.7",
