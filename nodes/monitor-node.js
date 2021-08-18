@@ -15,6 +15,10 @@ module.exports = function (RED) {
             debug: config.debug
         });
 
+        ad110.onError(err => {
+            node.error(JSON.stringify(err));
+        });
+
         ad110.isAlive()
             .then(alive => {
                 if (alive) {
@@ -39,8 +43,7 @@ module.exports = function (RED) {
                 }
             })
             .catch(err => {
-                node.warn('Error checking for AD110 status');
-                node.err(err);
+                node.error(JSON.stringify({ 'Error checking for AD110 status': err }));
             });
     }
 
